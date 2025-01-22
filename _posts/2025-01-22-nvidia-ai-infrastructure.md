@@ -1,12 +1,12 @@
 ---
 layout: post
 title: NVIDIA's Networking Technology DPUs and NVLink and beyond
-excerpt: Nvidia has DPU, NVLink to two powerful technologies to improve the scalability of AI infrastructure. Today we will explore how these technologies work and their impact on modern computing. Also we will discuss other companies' efforts to catch up with Nvidia.
+abstract: Nvidia has DPU, NVLink to two powerful technologies to improve the scalability of AI infrastructure. Today we will explore how these technologies work and their impact on modern computing. Also we will discuss other companies' efforts to catch up with Nvidia.
 ---
 
 {{ page.title }}
 
-{{ page.excerpt }}
+{{ page.abstract }}
 
 # Unveiling NVIDIA’s Networking Technology: DPUs and NVLink
 
