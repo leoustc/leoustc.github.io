@@ -64,7 +64,7 @@ title: Home
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </h3>
             <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
-            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
         </article>
         {% endfor %}
     </div>
