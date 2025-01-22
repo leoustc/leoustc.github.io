@@ -682,3 +682,7 @@ body {
         padding: 0 2rem;
     }
 } 
+
+.left-align {
+    text-align: left;
+}
