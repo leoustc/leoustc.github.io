@@ -34,17 +34,18 @@ title: Home
     </div>
 </div>
 
-<h2 class="section-title">Articles</h2>
-
-<div class="posts-list">
-    {% for post in site.posts %}
-    <article class="post-item">
-        <h3 class="post-title">
-            <span class="post-star">✦</span>
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h3>
-        <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-    </article>
-    {% endfor %}
+<div> 
+    <h2 class="section-title">Articles</h2>
+    <div class="posts-list">
+        {% for post in site.posts %}
+        <article class="post-item">
+            <h3 class="post-title">
+                <span class="post-star">✦</span>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        </article>
+        {% endfor %}
+    </div>
 </div>
