@@ -11,7 +11,6 @@ title: Home
             </div>
             <div class="profile-content">
                 <h1>Dr. Fu Li <span class="nickname">(Leo)</span></h1>
-                <div class="title-badge">AI Infrastructure Expert</div>
                 <p class="bio-text">Expert in AI infrastructure networking, specializing in advanced protocols like PCIe Net, RDMA over PCIe/CXL, and scalable solutions for next-generation AI systems. Passionate about driving innovation at the intersection of hardware, networking, and cloud-native technologies.</p>
                 <div class="social-links">
                     <a href="https://github.com/leoustc" target="_blank" class="social-link">
@@ -27,7 +26,7 @@ title: Home
 <div class="content-section">
     <h2 class="section-title">Latest Articles</h2>
     <div class="posts-grid">
-        {% for post in site.posts limit:6 %}
+        {% for post in site.posts limit:4 %}
         <article class="post-card">
             <div class="post-card-content">
                 <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
@@ -37,5 +36,8 @@ title: Home
             </div>
         </article>
         {% endfor %}
+    </div>
+    <div class="view-all">
+        <a href="{{ '/blog' | relative_url }}" class="view-all-link">View All Posts →</a>
     </div>
 </div>
