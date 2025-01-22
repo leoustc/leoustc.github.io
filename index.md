@@ -34,6 +34,7 @@ title: Home
     </div>
 </div>
 
+{% comment %}
 {% if site.news.size > 0 %}
 <div class="articles-section">
     <h2 class="section-title">News</h2>
@@ -51,6 +52,7 @@ title: Home
     </div>
 </div>
 {% endif %}
+{% endcomment %}
 
 <div class="articles-section">
     <h2 class="section-title">Articles</h2>

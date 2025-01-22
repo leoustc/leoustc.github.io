@@ -12,9 +12,9 @@ collections:
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
-  news:
-    output: true
-    permalink: /news/:year/:month/:day/:title/
+#  news:
+#    output: true
+#    permalink: /news/:year/:month/:day/:title/
 
 # Defaults
 defaults:
@@ -24,12 +24,12 @@ defaults:
     values:
       layout: "post"
       author: "Dr. Fu Li"
-  - scope:
-      path: ""
-      type: "news"
-    values:
-      layout: "post"
-      author: "Dr. Fu Li"
+#  - scope:
+#      path: ""
+#      type: "news"
+#    values:
+#      layout: "post"
+#      author: "Dr. Fu Li"
 
 # Exclude files from processing
 exclude:
