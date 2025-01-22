@@ -1,0 +1,15 @@
+title: Dr. Fu Li (Leo)
+description: Personal website of Dr. Fu Li, expert in AI infrastructure networking
+baseurl: "" # if your site is in a subdirectory, put it here
+url: "https://leoustc.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor 
