@@ -2,9 +2,10 @@
 layout: default
 title: Home
 ---
+
 <header class="profile-section">
     <div class="profile-image">
-        <img src="{{ '/assets/images/profile-image.jpg' | relative_url }}" alt="Dr. Fu Li">
+        <img src="{{ '/assets/leopic-round.png' | relative_url }}" alt="Dr. Fu Li">
     </div>
     <div class="bio">
         <h1>Dr. Fu Li (Leo)</h1>

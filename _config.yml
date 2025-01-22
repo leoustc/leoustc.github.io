@@ -7,6 +7,21 @@ url: "https://leoustc.github.io"
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
 
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Dr. Fu Li"
+
 # Exclude files from processing
 exclude:
   - Gemfile
