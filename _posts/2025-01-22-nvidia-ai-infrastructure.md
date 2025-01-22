@@ -4,12 +4,6 @@ title: NVIDIA's Networking Technology DPUs and NVLink and beyond
 abstract: Nvidia has DPU, NVLink to two powerful technologies to improve the scalability of AI infrastructure. Today we will explore how these technologies work and their impact on modern computing. Also we will discuss other companies' efforts to catch up with Nvidia.
 ---
 
-{{ page.title }}
-
-{{ page.abstract }}
-
-# Unveiling NVIDIA’s Networking Technology: DPUs and NVLink
-
 ## Introduction  
 
 NVIDIA has consistently pushed the boundaries of high-performance computing, AI, and networking. With technologies like DPUs (Data Processing Units) and NVLink, the company has revolutionized data movement, enabling faster and more efficient AI systems. In this article, we’ll explore how these innovations work and their impact on modern computing.
