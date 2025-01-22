@@ -34,7 +34,25 @@ title: Home
     </div>
 </div>
 
-<div class="articles-section"> 
+{% if site.news.size > 0 %}
+<div class="articles-section">
+    <h2 class="section-title">News</h2>
+    <div class="posts-list">
+        {% for news in site.news %}
+        <article class="post-item left-align">
+            <h3 class="post-title">
+                <span class="post-star">✦</span>
+                <a href="{{ news.url | relative_url }}">{{ news.title }}</a>
+            </h3>
+            <div class="post-meta">{{ news.date | date: "%B %d, %Y" }}</div>
+            <p class="post-excerpt">{{ news.excerpt | strip_html | truncatewords: 30 }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<div class="articles-section">
     <h2 class="section-title">Articles</h2>
     <div class="posts-list">
         {% for post in site.posts %}

@@ -12,12 +12,21 @@ collections:
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
+  news:
+    output: true
+    permalink: /news/:year/:month/:day/:title/
 
 # Defaults
 defaults:
   - scope:
       path: ""
       type: "posts"
+    values:
+      layout: "post"
+      author: "Dr. Fu Li"
+  - scope:
+      path: ""
+      type: "news"
     values:
       layout: "post"
       author: "Dr. Fu Li"
