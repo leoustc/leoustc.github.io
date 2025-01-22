@@ -176,16 +176,36 @@ body {
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     color: var(--secondary-color);
     font-size: 0.9rem;
+    gap: 2rem;
 }
 
-.footer-right a {
+.footer-center {
+    text-align: center;
     color: var(--accent-color);
-    text-decoration: none;
+    font-style: italic;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.github-footer {
+    color: var(--secondary-color);
+    transition: color 0.2s ease;
+}
+
+.github-footer:hover {
+    color: var(--accent-color);
+}
+
+.github-footer .github-icon {
+    width: 24px;
+    height: 24px;
 }
 
 /* Hero Section */
@@ -433,6 +453,16 @@ body {
     .hero-section {
         padding: 1rem 1rem 2rem;
     }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
 }
 
 /* Update posts section for list style */
@@ -456,15 +486,19 @@ body {
 
 .post-item {
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .post-item:last-child {
     border-bottom: none;
+    margin-bottom: 0;
 }
 
 .post-item .post-title {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
 
@@ -481,12 +515,27 @@ body {
 .post-item .post-meta {
     font-size: 0.9rem;
     color: var(--secondary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    margin-left: 1.7rem;
 }
 
 .post-item .post-excerpt {
     color: var(--secondary-color);
     line-height: 1.6;
+    margin-left: 1.7rem;
+}
+
+.post-star {
+    display: inline-block;
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
 }
 
 /* Remove unused styles */
