@@ -34,11 +34,11 @@ title: Home
     </div>
 </div>
 
-<div> 
+<div class="articles-section"> 
     <h2 class="section-title">Articles</h2>
     <div class="posts-list">
         {% for post in site.posts %}
-        <article class="post-item">
+        <article class="post-item left-align">
             <h3 class="post-title">
                 <span class="post-star">✦</span>
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
