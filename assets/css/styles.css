@@ -202,7 +202,8 @@ body {
 .profile-container {
     max-width: 1000px;
     width: 100%;
-    margin: 0 auto;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 
 .profile-card {
@@ -211,7 +212,7 @@ body {
     padding: 3rem;
     display: flex;
     gap: 4rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .profile-image {
@@ -432,4 +433,19 @@ body {
     .hero-section {
         padding: 1rem 1rem 2rem;
     }
-} 
+}
+
+/* Update posts section spacing */
+.posts-section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* Remove the content-section styles since we don't need them anymore */ 
