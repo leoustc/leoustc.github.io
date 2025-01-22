@@ -35,5 +35,23 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star');
+            const animations = ['floatStarRight', 'floatStarLeft', 'floatStarDiagonal'];
+            const durations = ['6s', '7s', '8s'];
+            
+            stars.forEach(star => {
+                const randomAnim = animations[Math.floor(Math.random() * animations.length)];
+                const randomDuration = durations[Math.floor(Math.random() * durations.length)];
+                const randomDelay = Math.random() * 5 + 's';
+                
+                star.style.animation = `${randomAnim} ${randomDuration} linear infinite`;
+                star.style.animationDelay = randomDelay;
+                star.style.left = Math.random() * 90 + 5 + '%';
+            });
+        });
+    </script>
 </body>
 </html> 

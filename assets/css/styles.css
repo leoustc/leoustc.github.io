@@ -219,11 +219,15 @@ body {
     display: none;
 }
 
-.profile-container {
+.profile-container, .posts-section {
     max-width: 1000px;
     width: 100%;
     margin: 2rem auto;
     padding: 0 2rem;
+}
+
+.posts-section {
+    margin-top: 3rem;
 }
 
 .profile-card {
@@ -467,9 +471,7 @@ body {
 
 /* Update posts section for list style */
 .posts-section {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 0 2rem;
+    margin-top: 3rem;
 }
 
 .section-title {
@@ -564,23 +566,12 @@ body {
     color: var(--accent-color);
     opacity: 0;
     font-size: 1.2rem;
-    animation: floatStar 6s linear infinite;
 }
 
-.star:nth-child(1) { left: 10%; animation-delay: 0s; }
-.star:nth-child(2) { left: 20%; animation-delay: 2s; }
-.star:nth-child(3) { left: 30%; animation-delay: 4s; }
-.star:nth-child(4) { left: 40%; animation-delay: 1s; }
-.star:nth-child(5) { left: 50%; animation-delay: 3s; }
-.star:nth-child(6) { left: 60%; animation-delay: 5s; }
-.star:nth-child(7) { left: 70%; animation-delay: 2.5s; }
-.star:nth-child(8) { left: 80%; animation-delay: 1.5s; }
-.star:nth-child(9) { left: 90%; animation-delay: 3.5s; }
-.star:nth-child(10) { left: 95%; animation-delay: 4.5s; }
-
-@keyframes floatStar {
+/* Create multiple animation variations */
+@keyframes floatStarRight {
     0% {
-        transform: translateY(100vh) rotate(0deg);
+        transform: translate(-100px, 100vh) rotate(0deg);
         opacity: 0;
     }
     10% {
@@ -590,7 +581,66 @@ body {
         opacity: 0.3;
     }
     100% {
-        transform: translateY(-100px) rotate(360deg);
+        transform: translate(100px, -100px) rotate(360deg);
         opacity: 0;
     }
-} 
+}
+
+@keyframes floatStarLeft {
+    0% {
+        transform: translate(100px, 100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-100px, -100px) rotate(-360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatStarDiagonal {
+    0% {
+        transform: translate(-100px, 100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(100px, -100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Assign random animations to stars */
+.star:nth-child(3n) {
+    animation: floatStarRight 6s linear infinite;
+}
+
+.star:nth-child(3n+1) {
+    animation: floatStarLeft 7s linear infinite;
+}
+
+.star:nth-child(3n+2) {
+    animation: floatStarDiagonal 8s linear infinite;
+}
+
+/* Update star positions for better distribution */
+.star:nth-child(1) { left: 5%; animation-delay: 0s; }
+.star:nth-child(2) { left: 15%; animation-delay: 2s; }
+.star:nth-child(3) { left: 25%; animation-delay: 4s; }
+.star:nth-child(4) { left: 35%; animation-delay: 1s; }
+.star:nth-child(5) { left: 45%; animation-delay: 3s; }
+.star:nth-child(6) { left: 55%; animation-delay: 5s; }
+.star:nth-child(7) { left: 65%; animation-delay: 2.5s; }
+.star:nth-child(8) { left: 75%; animation-delay: 1.5s; }
+.star:nth-child(9) { left: 85%; animation-delay: 3.5s; }
+.star:nth-child(10) { left: 95%; animation-delay: 4.5s; } 
