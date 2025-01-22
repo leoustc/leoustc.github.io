@@ -643,4 +643,29 @@ body {
 .star:nth-child(7) { left: 65%; animation-delay: 2.5s; }
 .star:nth-child(8) { left: 75%; animation-delay: 1.5s; }
 .star:nth-child(9) { left: 85%; animation-delay: 3.5s; }
-.star:nth-child(10) { left: 95%; animation-delay: 4.5s; } 
+.star:nth-child(10) { left: 95%; animation-delay: 4.5s; }
+
+/* Update container alignments */
+.profile-container, .posts-section {
+    max-width: 1000px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Align post list with profile content */
+.posts-list {
+    padding-left: calc(200px + 4rem); /* Width of profile image (200px) + gap (4rem) */
+}
+
+.section-title {
+    padding-left: calc(200px + 4rem);
+    text-align: left;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .posts-list, .section-title {
+        padding-left: 0;
+    }
+} 
