@@ -646,26 +646,41 @@ body {
 .star:nth-child(10) { left: 95%; animation-delay: 4.5s; }
 
 /* Update container alignments */
-.profile-container, .posts-section {
+.profile-container {
     max-width: 1000px;
     width: 100%;
     margin: 2rem auto;
     padding: 0 2rem;
 }
 
-/* Align post list with profile content */
-.posts-list {
-    padding-left: calc(200px + 4rem); /* Width of profile image (200px) + gap (4rem) */
+.profile-card {
+    background: var(--card-background);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    gap: 4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Align section title and posts with profile content */
 .section-title {
-    padding-left: calc(200px + 4rem);
-    text-align: left;
+    max-width: 1000px;
+    width: 100%;
+    margin: 3rem auto 2rem;
+    padding: 0 2rem 0 calc(2rem + 200px + 4rem); /* container padding + image width + gap */
+}
+
+.posts-list {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem 0 calc(2rem + 200px + 4rem); /* container padding + image width + gap */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .posts-list, .section-title {
-        padding-left: 0;
+    .section-title,
+    .posts-list {
+        padding: 0 2rem;
     }
 } 
