@@ -1,6 +1,7 @@
 ---
 layout: post
-title: NVIDIA’s Networking Technology: DPUs and NVLink
+title: NVIDIA's Networking Technology DPUs and NVLink
+excerpt: My first post on this blog.
 ---
 
 # Unveiling NVIDIA’s Networking Technology: DPUs and NVLink
