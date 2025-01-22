@@ -435,9 +435,9 @@ body {
     }
 }
 
-/* Update posts section spacing */
+/* Update posts section for list style */
 .posts-section {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 3rem auto;
     padding: 0 2rem;
 }
@@ -448,4 +448,51 @@ body {
     color: var(--primary-color);
 }
 
-/* Remove the content-section styles since we don't need them anymore */ 
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.post-item {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2.5rem;
+}
+
+.post-item:last-child {
+    border-bottom: none;
+}
+
+.post-item .post-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-item .post-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-item .post-title a:hover {
+    color: var(--accent-color);
+}
+
+.post-item .post-meta {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.post-item .post-excerpt {
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+/* Remove unused styles */
+.posts-grid,
+.post-card,
+.view-all,
+.content-section {
+    display: none;
+} 

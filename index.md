@@ -22,20 +22,16 @@ title: Home
 </div>
 
 <div class="posts-section">
-    <h2 class="section-title">Latest Articles</h2>
-    <div class="posts-grid">
-        {% for post in site.posts limit:4 %}
-        <article class="post-card">
-            <div class="post-card-content">
-                <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
-                <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-                <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
-            </div>
+    <h2 class="section-title">Articles</h2>
+    <div class="posts-list">
+        {% for post in site.posts %}
+        <article class="post-item">
+            <h3 class="post-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
         </article>
         {% endfor %}
-    </div>
-    <div class="view-all">
-        <a href="{{ '/blog' | relative_url }}" class="view-all-link">View All Posts →</a>
     </div>
 </div>
