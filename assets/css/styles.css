@@ -660,19 +660,19 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Align section title and posts with profile content */
+/* Align section title and posts with profile image */
 .section-title {
     max-width: 1000px;
     width: 100%;
     margin: 3rem auto 2rem;
-    padding: 0 2rem 0 calc(2rem + 200px + 4rem); /* container padding + image width + gap */
+    padding: 0 5rem; /* Same as profile container padding + profile card padding */
 }
 
 .posts-list {
     max-width: 1000px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 2rem 0 calc(2rem + 200px + 4rem); /* container padding + image width + gap */
+    padding: 0 5rem; /* Same as profile container padding + profile card padding */
 }
 
 /* Responsive adjustments */
@@ -681,7 +681,7 @@ body {
     .posts-list {
         padding: 0 2rem;
     }
-} 
+}
 
 .left-align {
     text-align: left;
