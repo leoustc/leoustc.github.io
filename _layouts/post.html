@@ -5,9 +5,9 @@ layout: default
     <nav>
         <a href="{{ '/' | relative_url }}" class="back-to-blog">← Back to Home</a>
     </nav>
-
+    <br>
     <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
+        <strong> <h1 class="post-title">{{ page.title }}</h1> </strong>
         <div class="post-meta">
             <time datetime="{{ page.date | date_to_xmlschema }}">
                 {{ page.date | date: "%B %d, %Y" }}
@@ -23,7 +23,7 @@ layout: default
             </div>
             {% endif %}
         </div>
-        <strong><em>Abstract: </em></strong>
+        <strong>Abstract: </strong>
         {{ page.abstract }}
     </header>
     
