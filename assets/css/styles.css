@@ -516,13 +516,13 @@ body {
     font-size: 0.9rem;
     color: var(--secondary-color);
     margin-bottom: 0.75rem;
-    margin-left: 1.7rem;
+    margin-left: 1.2rem;
 }
 
 .post-item .post-excerpt {
     color: var(--secondary-color);
     line-height: 1.6;
-    margin-left: 1.7rem;
+    margin-left: 1.2rem;
 }
 
 .post-star {
@@ -665,14 +665,14 @@ body {
     max-width: 1000px;
     width: 100%;
     margin: 3rem auto 2rem;
-    padding: 0 5rem; /* Same as profile container padding + profile card padding */
+    padding: 0 3rem;
 }
 
 .posts-list {
     max-width: 1000px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 5rem; /* Same as profile container padding + profile card padding */
+    padding: 0 3rem;
 }
 
 /* Responsive adjustments */
@@ -680,6 +680,11 @@ body {
     .section-title,
     .posts-list {
         padding: 0 2rem;
+    }
+    
+    .post-item .post-meta,
+    .post-item .post-excerpt {
+        margin-left: 1.2rem;
     }
 }
 
