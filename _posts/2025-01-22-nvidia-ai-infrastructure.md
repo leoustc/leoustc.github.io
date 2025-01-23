@@ -49,11 +49,11 @@ In order to solve the latency problem, Nvidia use a backdoor connection between 
 
 Howe to solve this problem?
 
-
-
-
-![NVLink](https://developer-blogs.nvidia.com/wp-content/uploads/2022/11/grace-hopper-nvlink-switch-system.png)
-
+<div style="text-align: center;">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2022/11/grace-hopper-nvlink-switch-system.png" 
+alt="NVLink" style="width: 70%; height: auto;">
+<p>Scaling with DPUs and NVLink</p>
+</div>
 
 ## 1. DPUs: Optimizing Data-Centric Workloads  
 DPUs are specialized processors designed to offload data-centric tasks, reducing the burden on traditional CPUs. NVIDIA’s BlueField DPU series exemplifies this innovation by handling networking, storage, and security workloads independently.
