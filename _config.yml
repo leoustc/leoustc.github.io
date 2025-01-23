@@ -5,6 +5,9 @@ url: "https://leoustc.github.io"
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+
 permalink: /:year/:month/:day/:title/
 
 # Collections

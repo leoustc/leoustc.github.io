@@ -71,6 +71,7 @@ Modern AI workloads often involve a mix of parallelism methods, each with unique
 | **Pipeline Parallel**   | Low-Moderate           | Moderate (inter-stage communication) |
 
 
+
 By matching subsystem capabilities to workload needs, NVIDIA achieves a balance between performance and scalability.
 
 
