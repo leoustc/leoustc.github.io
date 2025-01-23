@@ -63,11 +63,13 @@ The two networks intersect, leveraging their strengths to handle diverse workloa
 
 Modern AI workloads often involve a mix of parallelism methods, each with unique requirements for latency and bandwidth. NVIDIA’s subsystem architecture is designed to address these variations by organizing GPUs into smaller, optimized groups.
 
+
 | **Parallelism Method** | **Latency Sensitivity** | **Bandwidth Requirements**          |
 |-------------------------|-------------------------|--------------------------------------|
 | **Data Parallel**       | Moderate-High          | High (gradient synchronization)      |
 | **Tensor Parallel**     | High                  | Very High (frequent tensor slicing)  |
 | **Pipeline Parallel**   | Low-Moderate           | Moderate (inter-stage communication) |
+
 
 By matching subsystem capabilities to workload needs, NVIDIA achieves a balance between performance and scalability.
 
