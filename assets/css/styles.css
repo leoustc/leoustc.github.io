@@ -151,6 +151,21 @@ body {
     margin-bottom: 0.9rem;
 }
 
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+.post-content  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+.post-content  table th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+
 .post-navigation {
     margin-top: 4rem;
     padding-top: 2rem;

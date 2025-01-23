@@ -16,12 +16,14 @@ This article takes you on a deep dive into NVIDIA’s innovations, their transfo
 ## 1. The Dual Challenge of AI Networking
 
 Scaling AI infrastructure presents two fundamental challenges:  
-1. **Scale-Out Scalability:** Connecting vast numbers of GPUs to form large, efficient clusters.  
-2. **Scale-Up Performance:** Enabling low-latency, high-bandwidth communication within smaller, high-performance subsystems.
+
+- **Scale-Out Scalability:** Connecting vast numbers of GPUs to form large, efficient clusters.  
+- **Scale-Up Performance:** Enabling low-latency, high-bandwidth communication within smaller, high-performance subsystems.
 
 ### 1.1 The Scale-Out Problem: Why TCP/IP Falls Short
 
 Traditional networks built on TCP/IP protocols excel in connecting large numbers of nodes, but they struggle under the unique demands of AI workloads:  
+
 - **Latency Sensitivity:** AI computations require near-instantaneous communication to ensure efficiency in training and inference.  
 - **Lossless Communication:** Even minor packet losses can drastically reduce performance in AI clusters.
 
@@ -44,8 +46,9 @@ alt="NVLink" style="width: 100%; height: auto;">
 
 
 NVIDIA’s solution to these challenges is its **dual CLOS architecture**, which integrates two complementary networks:  
-1. **RDMA-Based CLOS Network:** Handles large-scale data movement across massive GPU clusters.  
-2. **NVLink-Based CLOS Network:** Optimizes performance within small, high-speed GPU subsystems.
+
+- **RDMA-Based CLOS Network:** Handles large-scale data movement across massive GPU clusters.  
+- **NVLink-Based CLOS Network:** Optimizes performance within small, high-speed GPU subsystems.
 
 This dual approach ensures both scalability and performance, enabling NVIDIA to support a wide range of AI applications.
 
