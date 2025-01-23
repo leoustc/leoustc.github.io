@@ -4,8 +4,6 @@ title: "The Future of AI Infrastructure: NVIDIA’s Dual CLOS Architecture and I
 abstract: "As AI continues to push the boundaries of scalability and performance, NVIDIA's dual CLOS architecture—combining DPUs and NVLink—redefines how we approach AI infrastructure. This article unpacks the technology, its implications, and why competitors are struggling to keep pace."
 ---
 
-# The Future of AI Infrastructure: NVIDIA’s Dual CLOS Architecture and Its Game-Changing Impact
-
 ## Introduction
 
 Artificial Intelligence (AI) has entered an era of unprecedented scale, driving innovation across industries. But with this growth comes immense pressure on the underlying infrastructure. How do we connect thousands of GPUs efficiently while ensuring low-latency, high-performance communication? Traditional networking architectures are reaching their limits, forcing the industry to rethink how data moves within and between clusters.
@@ -14,7 +12,6 @@ Enter NVIDIA, with its groundbreaking **dual CLOS architecture**, which marries 
 
 This article takes you on a deep dive into NVIDIA’s innovations, their transformative impact on AI and high-performance computing (HPC), and the strategic challenges for competitors attempting to keep up.
 
----
 
 ## 1. The Dual Challenge of AI Networking
 
@@ -36,13 +33,12 @@ Most AI systems address these challenges by adopting **CLOS network topologies**
 
 While CLOS networks handle scale-out effectively, they struggle to meet the low-latency demands of certain AI workloads. This is where NVIDIA’s **NVLink** excels. Acting as a “backdoor” communication layer, NVLink creates high-performance, low-latency connections within GPU subsystems, bypassing traditional bottlenecks.
 
----
 
 ## 2. NVIDIA’s Dual CLOS Architecture: A Game Changer
 
 <div style="text-align: center;">
 <img src="https://developer-blogs.nvidia.com/wp-content/uploads/2022/11/grace-hopper-nvlink-switch-system.png" 
-alt="NVLink" style="width: 70%; height: auto;">
+alt="NVLink" style="width: 100%; height: auto;">
 <p>Scaling with DPUs and NVLink</p>
 </div>
 
@@ -60,7 +56,6 @@ This dual approach ensures both scalability and performance, enabling NVIDIA to 
 
 The two networks intersect, leveraging their strengths to handle diverse workloads efficiently. For instance, while the RDMA CLOS handles scale-out operations, NVLink subsystems manage latency-sensitive tasks like tensor operations.
 
----
 
 ## 3. Subsystems: Balancing Scalability and Performance
 
@@ -76,7 +71,6 @@ Modern AI workloads often involve a mix of parallelism methods, each with unique
 
 By matching subsystem capabilities to workload needs, NVIDIA achieves a balance between performance and scalability.
 
----
 
 ## 4. Redefining the AI Network Paradigm
 
@@ -90,7 +84,6 @@ As NVLink scalability increases, the potential to connect GPUs grows exponential
 
 NVIDIA’s dual CLOS architecture is not just for HPC; it’s also a game-changer in edge computing. Smaller clusters demand low-latency, high-bandwidth solutions, and NVIDIA’s NVLink subsystems are perfectly positioned to dominate this space.
 
----
 
 ## 5. Competitive Landscape
 
@@ -101,7 +94,6 @@ While NVIDIA leads in dual CLOS architectures, competitors are attempting to bri
 
 Despite these efforts, NVIDIA’s ability to integrate scale-out and scale-up networks gives it a significant competitive advantage.
 
----
 
 ## Conclusion
 
