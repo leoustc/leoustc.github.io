@@ -302,10 +302,10 @@ body {
 }
 
 .bio-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 0.9rem;
+    line-height: 1.5;
     color: var(--secondary-color);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .social-links {
