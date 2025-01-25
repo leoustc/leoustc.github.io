@@ -58,6 +58,11 @@ While DPUs excel in large-scale data centers, their power and cost limitations m
 
 ## 3. The Solution: Shared DPUs in CPU-Centric Architectures
 
+<div style="text-align: center;">
+    <img src="{{ '/blog/images/dpu-2.png' | relative_url }}" alt="DPU Shared Cloud Native Architecture Image">
+</div>
+
+
 ### 3.1 A Collaborative Approach: Shared DPUs
 One potential solution is to integrate DPUs into a **CPU-centric architecture**, where DPUs are shared across multiple CPUs. This approach could address several challenges:
 - **Lower Power Consumption:** Sharing DPUs reduces the per-node power requirement.  
@@ -65,7 +70,7 @@ One potential solution is to integrate DPUs into a **CPU-centric architecture**,
 - **Simplified Architecture:** By acting as a shared resource, DPUs can simplify system design and reduce redundancy.
 
 <div style="text-align: center;">
-    <img src="{{ '/blog/images/dpu-3.png' | relative_url }}" alt="DPU Image">
+    <img src="{{ '/blog/images/dpu-3.png' | relative_url }}" alt="DPU Shared Cloud Native Architecture Image">
 </div>
 
 ### 3.2 Rethinking Networking Fabrics
