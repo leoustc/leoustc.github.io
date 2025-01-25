@@ -64,7 +64,7 @@ One potential solution is to integrate DPUs into a **CPU-centric architecture**,
 - **Cost Efficiency:** Shared usage amortizes the cost of DPUs across multiple servers.  
 - **Simplified Architecture:** By acting as a shared resource, DPUs can simplify system design and reduce redundancy.
 
-![dpu-3]({{ '/_posts/dpu-3.png' | relative_url }})
+![dpu-3]({{ '/blog/images/dpu-3.png' | relative_url }})
 
 ### 3.2 Rethinking Networking Fabrics
 In a shared architecture, DPUs can form the backbone of a new **data fabric**, enabling high-throughput, low-latency communication across nodes. By consolidating networking tasks into a centralized DPU, data centers can achieve:
