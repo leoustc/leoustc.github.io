@@ -13,7 +13,12 @@ This article is divided into three sections:
 2. The challenges they face that hinder their acceptance.  
 3. Potential solutions to overcome these challenges and ensure DPUs fulfill their promise.
 
----
+this blog is a summary of four posts from:
+
+- 2021-06-29 [从DPU的崛起谈谈计算体系变革（一）](https://mp.weixin.qq.com/s/IsqmfLtHp9hVtVtaU738ng)
+- 2021-07-03 [从DPU的崛起谈谈计算体系变革（二）](https://mp.weixin.qq.com/s/2BMTXPHVde2I7HklxCrtBw)
+- 2021-07-05 [从DPU的崛起谈谈计算体系变革（三）](https://mp.weixin.qq.com/s/loOTdaamUIziJRNH1v3lRg)
+- 2021-07-22 [从DPU的崛起谈谈计算体系变革（四）](https://mp.weixin.qq.com/s/npSGdrGScH3EW2qU0u1AOw)
 
 ## 1. The Rise of DPUs: Why They Are Gaining Popularity
 
@@ -34,7 +39,7 @@ The rise of **data-centric architectures**—where computation is brought closer
 2. **Infrastructure Management:** They streamline tasks like virtualization and resource pooling.  
 3. **Security:** DPUs enhance data center security by isolating sensitive processes from the host CPU.
 
----
+
 
 ## 2. Challenges Facing DPUs
 
@@ -54,7 +59,7 @@ Despite their advantages, DPUs have not yet demonstrated significant cost saving
 ### 2.4 Lack of Edge Computing Readiness
 While DPUs excel in large-scale data centers, their power and cost limitations make them less suitable for edge computing environments, which are projected to dominate the server market by 2029.
 
----
+
 
 ## 3. The Solution: Shared DPUs in CPU-Centric Architectures
 
@@ -83,7 +88,7 @@ In a shared architecture, DPUs can form the backbone of a new **data fabric**, e
 - **Edge Computing Clusters:** Shared DPUs can enable lightweight, cost-effective solutions for edge environments.  
 - **Hybrid Cloud Architectures:** By combining DPUs with Smart NICs and traditional CPUs, hybrid setups can leverage the strengths of each technology.
 
----
+
 
 ## Conclusion
 
