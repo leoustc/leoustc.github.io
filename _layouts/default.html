@@ -14,12 +14,15 @@
     </div>
     <script>
         // JavaScript to hide the notification after 5 seconds
-        setTimeout(function() {
+        if (window.location.hostname === 'leoustc.github.io') {
             var notification = document.getElementById('notification');
             if (notification) {
-                notification.style.display = 'none';
+                notification.style.display = 'block';
+                setTimeout(function() {
+                    notification.style.display = 'none';
+                }, 5000);
             }
-        }, 5000);
+        }
     </script>
     <style>
         /* CSS to style the notification */
