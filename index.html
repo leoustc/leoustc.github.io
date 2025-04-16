@@ -28,10 +28,6 @@
       text-align: center;
     }
     .about-me, .layer {
-      background: #f9f9f9;
-      border: 1px solid #d0d7de;
-      padding: 20px;
-      border-radius: 6px;
       margin-bottom: 30px;
     }
     a {
@@ -40,23 +36,6 @@
     }
     a:hover {
       text-decoration: underline;
-    }
-    .tools ul {
-      list-style: none;
-      padding: 0;
-    }
-    .tools li {
-      margin-bottom: 15px;
-    }
-    .tools li code {
-      background: #f6f8fa;
-      border: 1px solid #d0d7de;
-      border-radius: 4px;
-      display: block;
-      padding: 10px;
-      font-size: 14px;
-      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-      margin-top: 6px;
     }
     .github-logo {
       display: flex;
@@ -88,25 +67,27 @@
 
     <div class="layer">
       <h3>1. GPU & NVLink</h3>
-      <p>Modern GPUs like A100 and H100 are the foundation for training large AI models. NVLink offers fast interconnect between GPUs, helping reduce bottlenecks in multi-GPU jobs.</p>
+      <p>
+        GPUs are the backbone of AI computation, offering unparalleled parallel processing capabilities. Modern GPUs like NVIDIA A100 and H100 provide up to 1.6 TB/s memory bandwidth, enabling efficient data movement for large-scale AI models. NVLink further enhances multi-GPU setups by providing up to 600 GB/s interconnect speeds, reducing bottlenecks in distributed training. These technologies are critical for training LLMs (Large Language Models) and accelerating inference workloads.
+      </p>
     </div>
     <div class="layer">
       <h3>2. RDMA Networking</h3>
-      <p>RDMA allows high-speed, low-latency communication across machines — ideal for synchronizing parameters in distributed training.</p>
+      <p>
+        RDMA (Remote Direct Memory Access) networking ensures low-latency, high-bandwidth communication between nodes in distributed AI workloads. With latencies as low as 1 microsecond and bandwidths exceeding 200 Gbps (e.g., InfiniBand or RoCE), RDMA is essential for synchronizing gradients and parameters across GPUs in multi-node setups. This minimizes communication overhead, enabling faster convergence during LLM training and improving scalability for large AI clusters.
+      </p>
     </div>
     <div class="layer">
       <h3>3. Kubernetes</h3>
-      <p>Kubernetes helps manage and scale AI workloads, schedule jobs, and orchestrate multi-node training or inference pipelines.</p>
+      <p>
+        Kubernetes (K8s) provides a scalable and flexible platform for managing containerized AI workloads. It simplifies the orchestration of multi-node training jobs, inference pipelines, and resource allocation. Kubernetes ensures stability and fault tolerance by automatically rescheduling failed pods and maintaining service availability. For LLMs, Kubernetes enables seamless scaling and efficient resource utilization, making it a cornerstone of modern AI infrastructure.
+      </p>
     </div>
     <div class="layer">
       <h3>4. AI-Native Applications</h3>
-      <p>From training pipelines to inference APIs, the application layer brings models into production and interactive use cases.</p>
-    </div>
-
-    <div class="tools">
-      <h2>Tool Downloads</h2>
-      <p>The list below is fetched automatically from the <code>/tools/</code> folder in the repository. Run any script directly using:</p>
-      <ul id="tools-list"></ul>
+      <p>
+        AI-native applications are designed to meet the unique demands of AI workloads. These include training pipelines, inference APIs, and data preprocessing tools. For LLMs, such applications streamline the deployment of models, optimize inferencing latency, and enable real-time use cases like chatbots and recommendation systems. Efficient AI-native applications are critical for bridging the gap between research and production, ensuring scalability and reliability in real-world scenarios.
+      </p>
     </div>
   </div>
 
@@ -115,45 +96,5 @@
       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" />
     </a>
   </div>
-
-  <script>
-    const owner = "leoustc";
-    const repo = "leoustc.github.io";
-    const folderPath = "tools";
-    const apiURL = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
-    const rawBase = `https://${owner}.github.io/${folderPath}/`;
-
-    async function loadTools() {
-      try {
-        const res = await fetch(apiURL);
-        const data = await res.json();
-
-        const toolsList = document.getElementById("tools-list");
-
-        data.forEach(file => {
-          if (file.name.endsWith(".sh")) {
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            a.href = file.download_url;
-            a.textContent = file.name;
-            a.target = "_blank";
-
-            const code = document.createElement("code");
-            code.textContent = `curl -sSL ${rawBase}${file.name} | sudo bash`;
-
-            li.appendChild(a);
-            li.appendChild(code);
-            toolsList.appendChild(li);
-          }
-        });
-      } catch (err) {
-        console.error("Failed to load tools:", err);
-        const fallback = document.getElementById("tools-list");
-        fallback.innerHTML = "<li>Unable to fetch tool list. Please visit the <a href='https://github.com/leoustc/leoustc.github.io/tree/main/tools'>GitHub repo</a>.</li>";
-      }
-    }
-
-    loadTools();
-  </script>
 </body>
 </html>
