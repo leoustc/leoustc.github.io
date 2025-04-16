@@ -91,7 +91,8 @@
       "setup-gpu.sh",
       "configure-rdma.sh",
       "deploy-k8s.sh",
-      "ai-app-deploy.sh"
+      "ai-app-deploy.sh",
+      "setup_remote_jupyterserver.sh" // Added the new script
     ];
 
     const toolsList = document.getElementById("tools-list");
