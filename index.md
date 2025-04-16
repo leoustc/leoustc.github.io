@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Infrastructure Architecture</title>
+  <title>AI Infrastructure Toolset</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -54,25 +54,38 @@
 </head>
 <body>
   <header>
-    <h1>AI Infrastructure Architecture</h1>
+    <h1>AI Infrastructure Toolset</h1>
   </header>
   <div class="container">
+    <h2>Welcome to the AI Infrastructure Toolset</h2>
+    <p>
+      This website is dedicated to providing tools and resources to make AI infrastructure more efficient and scalable. Whether you're building large-scale AI systems, training LLMs (Large Language Models), or deploying AI-native applications, our toolset is designed to optimize your workflows and enhance performance. Explore our solutions for GPUs, RDMA networking, Kubernetes cluster management, and AI-native applications, and download scripts to streamline your AI infrastructure setup.
+    </p>
+
     <h2>Four Layers of AI Infrastructure</h2>
     <div class="layer">
       <h3>1. GPU</h3>
-      <p>High-performance GPUs are the foundation of AI computation, enabling efficient training and inference for deep learning models.</p>
+      <p>
+        GPUs are the backbone of AI computation, offering unparalleled parallel processing capabilities. Modern GPUs, such as NVIDIA A100 or H100, provide up to 1.6 TB/s memory bandwidth and support NVLink with speeds of up to 600 GB/s for inter-GPU communication. These features are critical for training LLMs, which require massive data throughput and efficient tensor operations. GPUs accelerate both training and inferencing, reducing the time-to-solution for complex AI models.
+      </p>
     </div>
     <div class="layer">
       <h3>2. RDMA Networking</h3>
-      <p>Remote Direct Memory Access (RDMA) networking ensures low-latency, high-throughput communication between nodes in distributed AI workloads.</p>
+      <p>
+        RDMA (Remote Direct Memory Access) networking enables low-latency, high-bandwidth communication between nodes in distributed AI workloads. With latencies as low as 1 microsecond and bandwidths exceeding 200 Gbps (e.g., with InfiniBand or RoCE), RDMA ensures efficient data transfer for large-scale LLM training. This is essential for synchronizing gradients and parameters across GPUs in multi-node setups, minimizing bottlenecks in distributed training.
+      </p>
     </div>
     <div class="layer">
       <h3>3. Kubernetes (K8s) Cluster Management</h3>
-      <p>Kubernetes provides a scalable and flexible platform for managing containerized AI workloads across clusters.</p>
+      <p>
+        Kubernetes provides a robust platform for managing containerized AI workloads. It supports horizontal scaling, enabling the addition of more nodes to handle increased computational demands. Kubernetes ensures stability and fault tolerance, automatically rescheduling failed pods and maintaining service availability. For LLM training and inferencing, Kubernetes simplifies the deployment of distributed systems, such as model training pipelines and inference services, across clusters.
+      </p>
     </div>
     <div class="layer">
       <h3>4. AI-Native Applications</h3>
-      <p>Applications designed specifically for AI, such as model training pipelines, inference services, and data preprocessing tools.</p>
+      <p>
+        AI-native applications are designed to leverage the unique requirements of AI workloads. These include model training pipelines, inference services, and data preprocessing tools. For LLMs, such applications streamline the deployment of models, optimize inferencing latency, and enable real-time applications like chatbots and recommendation systems. Efficient AI-native applications are critical for scaling LLMs to production environments and ensuring seamless user experiences.
+      </p>
     </div>
 
     <div class="tools">
@@ -92,7 +105,7 @@
       "configure-rdma.sh",
       "deploy-k8s.sh",
       "ai-app-deploy.sh",
-      "setup_remote_jupyterserver.sh" // Added the new script
+      "setup_remote_jupyterserver.sh"
     ];
 
     const toolsList = document.getElementById("tools-list");
