@@ -96,5 +96,46 @@
       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" />
     </a>
   </div>
+
+  <script>
+    const owner = "leoustc";
+    const repo = "leoustc.github.io";
+    const folderPath = "tools";
+    const apiURL = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
+    const rawBase = `https://${owner}.github.io/${folderPath}/`;
+
+    async function loadTools() {
+      try {
+        const res = await fetch(apiURL);
+        const data = await res.json();
+
+        const toolsList = document.getElementById("tools-list");
+
+        data.forEach(file => {
+          if (file.name.endsWith(".sh")) {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = file.download_url;
+            a.textContent = file.name;
+            a.target = "_blank";
+
+            const code = document.createElement("code");
+            code.textContent = `curl -sSL ${rawBase}${file.name} | sudo bash`;
+
+            li.appendChild(a);
+            li.appendChild(code);
+            toolsList.appendChild(li);
+          }
+        });
+      } catch (err) {
+        console.error("Failed to load tools:", err);
+        const fallback = document.getElementById("tools-list");
+        fallback.innerHTML = "<li>Unable to fetch tool list. Please visit the <a href='https://github.com/leoustc/leoustc.github.io/tree/main/tools'>GitHub repo</a>.</li>";
+      }
+    }
+
+    loadTools();
+  </script>
+
 </body>
 </html>
