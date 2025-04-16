@@ -1,84 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AI Infrastructure Toolset</title>
   <style>
+    :root {
+      color-scheme: light;
+      --bg-color: #ffffff;
+      --text-color: #24292f;
+      --border-color: #d0d7de;
+      --header-bg: #f6f8fa;
+      --link-color: #0969da;
+      --code-bg: #f6f8fa;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
-      background-color: #f6f8fa;
-      color: #24292e;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
+
     header {
-      background: #24292e;
-      color: #fff;
-      padding: 1rem 0;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem;
       text-align: center;
     }
+
     .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 880px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
+
     h1, h2 {
+      font-weight: 600;
       text-align: center;
     }
+
+    .about-me {
+      border: 1px solid var(--border-color);
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+
     .layer {
-      margin-bottom: 20px;
+      border-left: 4px solid var(--border-color);
+      padding-left: 20px;
+      margin-bottom: 30px;
     }
-    .tools {
-      margin-top: 30px;
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     .tools ul {
       list-style: none;
       padding: 0;
     }
-    .tools ul li {
-      margin: 10px 0;
+
+    .tools li {
+      margin-bottom: 15px;
     }
-    .tools ul li a {
-      color: #0366d6;
-      text-decoration: none;
-    }
-    .tools ul li a:hover {
-      text-decoration: underline;
-    }
-    .tools ul li code {
-      display: block;
-      margin-top: 4px;
-      background: #f0f0f0;
-      padding: 6px;
+
+    .tools li code {
+      background: var(--code-bg);
+      border: 1px solid var(--border-color);
       border-radius: 4px;
+      display: block;
+      padding: 10px;
       font-size: 14px;
+      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+      margin-top: 6px;
     }
+
     .github-logo {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 40px;
     }
+
     .github-logo img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 2px solid #24292e;
+      width: 40px;
+      height: 40px;
     }
-    .about-me {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .about-me a {
-      color: #0366d6;
-      text-decoration: none;
-    }
-    .about-me a:hover {
-      text-decoration: underline;
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0d1117;
+        --text-color: #c9d1d9;
+        --border-color: #30363d;
+        --header-bg: #161b22;
+        --link-color: #58a6ff;
+        --code-bg: #161b22;
+      }
     }
   </style>
 </head>
@@ -86,54 +111,57 @@
   <header>
     <h1>AI Infrastructure Toolset</h1>
   </header>
+
   <div class="container">
     <div class="about-me">
       <h2>Welcome</h2>
       <p>
-        Hi, I'm <strong>Dr. Leo</strong>. I've been exploring and building infrastructure for large-scale AI systems for a while now — especially around GPU compute, fast networking, and scalable cloud-native setups.<br><br>
-        This page shares a few tools and notes that might help if you're building something similar. I hope they’re useful!<br>
-        Feel free to connect at <a href="https://leoustc.com" target="_blank">leoustc.com</a>
+        Hi, I'm <strong>Dr. Leo</strong>. I’ve been building infrastructure for AI systems, and this page collects a few small tools and setup scripts that I hope others may find helpful too.<br/>
+        Feel free to explore or reuse anything here.<br/>
+        Visit: <a href="https://leoustc.com" target="_blank">leoustc.com</a>
       </p>
     </div>
 
     <h2>Four Layers of AI Infrastructure</h2>
+
     <div class="layer">
       <h3>1. GPU & NVLink</h3>
       <p>
-        GPUs are the workhorses of AI workloads. Modern setups like the NVIDIA A100/H100 deliver huge memory bandwidth and NVLink for fast GPU-to-GPU communication — very helpful for large model training and inference.
+        Modern GPUs like A100 and H100 are the foundation for training large AI models. NVLink offers fast interconnect between GPUs, helping reduce bottlenecks in multi-GPU jobs.
       </p>
     </div>
+
     <div class="layer">
       <h3>2. RDMA Networking</h3>
       <p>
-        RDMA makes node-to-node communication fast and efficient, which is critical when training models across multiple machines. It minimizes CPU overhead and helps with synchronization during distributed training.
+        RDMA (Remote Direct Memory Access) allows high-speed, low-latency communication across machines. It's ideal for synchronizing parameters in distributed deep learning setups.
       </p>
     </div>
+
     <div class="layer">
-      <h3>3. Kubernetes for Orchestration</h3>
+      <h3>3. Kubernetes</h3>
       <p>
-        Kubernetes helps manage containerized AI workloads in a scalable way. Whether you're running a single-node experiment or a multi-node cluster, it makes things more repeatable and production-friendly.
+        Kubernetes provides scalable and automated orchestration for AI workloads. It’s useful for managing resources, scheduling jobs, and running experiments reliably.
       </p>
     </div>
+
     <div class="layer">
       <h3>4. AI-Native Apps</h3>
       <p>
-        These include training pipelines, inference APIs, and data preparation workflows. A solid app layer helps bring everything together and gets your models into real-world use.
+        From training pipelines to inference APIs, the application layer ties everything together and brings your models into production or interactive use cases.
       </p>
     </div>
 
     <div class="tools">
       <h2>Tool Downloads</h2>
-      <p>Here are some simple scripts I’ve used or shared with others. They help set up different parts of an AI infra stack. You can click to download or run them directly with <code>curl</code>:</p>
-      <ul id="tools-list">
-        <!-- JavaScript will populate this list -->
-      </ul>
+      <p>These scripts can help set up different parts of an AI infra stack. You can run them directly using:</p>
+      <ul id="tools-list"></ul>
     </div>
   </div>
 
   <div class="github-logo">
     <a href="https://github.com/leoustc" target="_blank">
-      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" />
     </a>
   </div>
 
@@ -150,13 +178,15 @@
     const toolsList = document.getElementById("tools-list");
     scripts.forEach(script => {
       const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.href = toolsFolder + script;
-      a.textContent = script;
-      a.target = "_blank";
+      const link = document.createElement("a");
+      link.href = toolsFolder + script;
+      link.textContent = script;
+      link.target = "_blank";
+
       const code = document.createElement("code");
       code.textContent = `curl -sSL ${toolsFolder}${script} | sudo bash`;
-      li.appendChild(a);
+
+      li.appendChild(link);
       li.appendChild(code);
       toolsList.appendChild(li);
     });
