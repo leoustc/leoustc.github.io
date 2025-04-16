@@ -6,21 +6,21 @@
   <title>AI Infrastructure Toolset</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #f6f8fa;
+      color: #24292e;
     }
     header {
-      background: #333;
+      background: #24292e;
       color: #fff;
       padding: 1rem 0;
       text-align: center;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 20px auto;
       padding: 20px;
       background: #fff;
@@ -44,10 +44,32 @@
       margin: 10px 0;
     }
     .tools ul li a {
-      color: #007BFF;
+      color: #0366d6;
       text-decoration: none;
     }
     .tools ul li a:hover {
+      text-decoration: underline;
+    }
+    .github-logo {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .github-logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #24292e;
+    }
+    .about-me {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .about-me a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+    .about-me a:hover {
       text-decoration: underline;
     }
   </style>
@@ -57,14 +79,18 @@
     <h1>AI Infrastructure Toolset</h1>
   </header>
   <div class="container">
-    <h2>Welcome to the AI Infrastructure Toolset</h2>
-    <p>
-      This website is dedicated to providing tools and resources to make AI infrastructure more efficient and scalable. Whether you're building large-scale AI systems, training LLMs (Large Language Models), or deploying AI-native applications, our toolset is designed to optimize your workflows and enhance performance. Explore our solutions for GPUs, RDMA networking, Kubernetes cluster management, and AI-native applications, and download scripts to streamline your AI infrastructure setup.
-    </p>
+    <div class="about-me">
+      <h2>About Me</h2>
+      <p>
+        <strong>Dr. Leo, AI Infra Architect</strong><br>
+        I specialize in designing and optimizing AI infrastructure, focusing on advanced networking protocols like PCIe Net and RDMA over PCIe/CXL. My passion lies in creating scalable solutions for next-generation AI systems, combining cutting-edge hardware, networking, and cloud-native technologies. I aim to drive innovation and efficiency in AI infrastructure to support the most demanding workloads, including LLM training and deployment.<br>
+        Visit my personal page: <a href="https://leoustc.com" target="_blank">https://leoustc.com</a>
+      </p>
+    </div>
 
     <h2>Four Layers of AI Infrastructure</h2>
     <div class="layer">
-      <h3>1. GPU</h3>
+      <h3>1. GPU and NVLink</h3>
       <p>
         GPUs are the backbone of AI computation, offering unparalleled parallel processing capabilities. Modern GPUs, such as NVIDIA A100 or H100, provide up to 1.6 TB/s memory bandwidth and support NVLink with speeds of up to 600 GB/s for inter-GPU communication. These features are critical for training LLMs, which require massive data throughput and efficient tensor operations. GPUs accelerate both training and inferencing, reducing the time-to-solution for complex AI models.
       </p>
@@ -90,16 +116,22 @@
 
     <div class="tools">
       <h2>Tools Download</h2>
-      <p>Below are some useful scripts for AI infrastructure management. Click to download:</p>
+      <p>Below are some useful scripts for AI infrastructure management. Click to download or use the provided <code>curl</code> command to install:</p>
       <ul id="tools-list">
         <!-- This list will be dynamically populated by JavaScript -->
       </ul>
     </div>
   </div>
 
+  <div class="github-logo">
+    <a href="https://github.com/leoustc" target="_blank">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+    </a>
+  </div>
+
   <script>
     // Dynamically list files in the "tools" folder
-    const toolsFolder = "/tools/";
+    const toolsFolder = "https://leoustc.github.io/tools/";
     const scripts = [
       "setup-gpu.sh",
       "configure-rdma.sh",
@@ -114,7 +146,10 @@
       const link = document.createElement("a");
       link.href = toolsFolder + script;
       link.textContent = script;
+      const curlCommand = document.createElement("code");
+      curlCommand.textContent = ` curl ${toolsFolder}${script} | bash`;
       listItem.appendChild(link);
+      listItem.appendChild(curlCommand);
       toolsList.appendChild(listItem);
     });
   </script>

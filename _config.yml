@@ -8,17 +8,6 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-permalink: /:year/:month/:day/:title/
-
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title/
-#  news:
-#    output: true
-#    permalink: /news/:year/:month/:day/:title/
-
 # Defaults
 defaults:
   - scope:
@@ -27,16 +16,10 @@ defaults:
     values:
       layout: "post"
       author: "Dr. Fu Li"
-#  - scope:
-#      path: ""
-#      type: "news"
-#    values:
-#      layout: "post"
-#      author: "Dr. Fu Li"
 
 # Exclude files from processing
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor 
+  - vendor
