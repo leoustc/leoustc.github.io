@@ -50,6 +50,14 @@
     .tools ul li a:hover {
       text-decoration: underline;
     }
+    .tools ul li code {
+      display: block;
+      margin-top: 4px;
+      background: #f0f0f0;
+      padding: 6px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
     .github-logo {
       display: flex;
       justify-content: center;
@@ -80,45 +88,45 @@
   </header>
   <div class="container">
     <div class="about-me">
-      <h2>About Me</h2>
+      <h2>Welcome</h2>
       <p>
-        <strong>Dr. Leo, AI Infra Architect</strong><br>
-        I specialize in designing and optimizing AI infrastructure, focusing on advanced networking protocols like PCIe Net and RDMA over PCIe/CXL. My passion lies in creating scalable solutions for next-generation AI systems, combining cutting-edge hardware, networking, and cloud-native technologies. I aim to drive innovation and efficiency in AI infrastructure to support the most demanding workloads, including LLM training and deployment.<br>
-        Visit my personal page: <a href="https://leoustc.com" target="_blank">https://leoustc.com</a>
+        Hi, I'm <strong>Dr. Leo</strong>. I've been exploring and building infrastructure for large-scale AI systems for a while now — especially around GPU compute, fast networking, and scalable cloud-native setups.<br><br>
+        This page shares a few tools and notes that might help if you're building something similar. I hope they’re useful!<br>
+        Feel free to connect at <a href="https://leoustc.com" target="_blank">leoustc.com</a>
       </p>
     </div>
 
     <h2>Four Layers of AI Infrastructure</h2>
     <div class="layer">
-      <h3>1. GPU and NVLink</h3>
+      <h3>1. GPU & NVLink</h3>
       <p>
-        GPUs are the backbone of AI computation, offering unparalleled parallel processing capabilities. Modern GPUs, such as NVIDIA A100 or H100, provide up to 1.6 TB/s memory bandwidth and support NVLink with speeds of up to 600 GB/s for inter-GPU communication. These features are critical for training LLMs, which require massive data throughput and efficient tensor operations. GPUs accelerate both training and inferencing, reducing the time-to-solution for complex AI models.
+        GPUs are the workhorses of AI workloads. Modern setups like the NVIDIA A100/H100 deliver huge memory bandwidth and NVLink for fast GPU-to-GPU communication — very helpful for large model training and inference.
       </p>
     </div>
     <div class="layer">
       <h3>2. RDMA Networking</h3>
       <p>
-        RDMA (Remote Direct Memory Access) networking enables low-latency, high-bandwidth communication between nodes in distributed AI workloads. With latencies as low as 1 microsecond and bandwidths exceeding 200 Gbps (e.g., with InfiniBand or RoCE), RDMA ensures efficient data transfer for large-scale LLM training. This is essential for synchronizing gradients and parameters across GPUs in multi-node setups, minimizing bottlenecks in distributed training.
+        RDMA makes node-to-node communication fast and efficient, which is critical when training models across multiple machines. It minimizes CPU overhead and helps with synchronization during distributed training.
       </p>
     </div>
     <div class="layer">
-      <h3>3. Kubernetes (K8s) Cluster Management</h3>
+      <h3>3. Kubernetes for Orchestration</h3>
       <p>
-        Kubernetes provides a robust platform for managing containerized AI workloads. It supports horizontal scaling, enabling the addition of more nodes to handle increased computational demands. Kubernetes ensures stability and fault tolerance, automatically rescheduling failed pods and maintaining service availability. For LLM training and inferencing, Kubernetes simplifies the deployment of distributed systems, such as model training pipelines and inference services, across clusters.
+        Kubernetes helps manage containerized AI workloads in a scalable way. Whether you're running a single-node experiment or a multi-node cluster, it makes things more repeatable and production-friendly.
       </p>
     </div>
     <div class="layer">
-      <h3>4. AI-Native Applications</h3>
+      <h3>4. AI-Native Apps</h3>
       <p>
-        AI-native applications are designed to leverage the unique requirements of AI workloads. These include model training pipelines, inference services, and data preprocessing tools. For LLMs, such applications streamline the deployment of models, optimize inferencing latency, and enable real-time applications like chatbots and recommendation systems. Efficient AI-native applications are critical for scaling LLMs to production environments and ensuring seamless user experiences.
+        These include training pipelines, inference APIs, and data preparation workflows. A solid app layer helps bring everything together and gets your models into real-world use.
       </p>
     </div>
 
     <div class="tools">
-      <h2>Tools Download</h2>
-      <p>Below are some useful scripts for AI infrastructure management. Click to download or use the provided <code>curl</code> command to install:</p>
+      <h2>Tool Downloads</h2>
+      <p>Here are some simple scripts I’ve used or shared with others. They help set up different parts of an AI infra stack. You can click to download or run them directly with <code>curl</code>:</p>
       <ul id="tools-list">
-        <!-- This list will be dynamically populated by JavaScript -->
+        <!-- JavaScript will populate this list -->
       </ul>
     </div>
   </div>
@@ -130,7 +138,6 @@
   </div>
 
   <script>
-    // Dynamically list files in the "tools" folder
     const toolsFolder = "https://leoustc.github.io/tools/";
     const scripts = [
       "setup-gpu.sh",
@@ -142,15 +149,16 @@
 
     const toolsList = document.getElementById("tools-list");
     scripts.forEach(script => {
-      const listItem = document.createElement("li");
-      const link = document.createElement("a");
-      link.href = toolsFolder + script;
-      link.textContent = script;
-      const curlCommand = document.createElement("code");
-      curlCommand.textContent = ` curl ${toolsFolder}${script} | bash`;
-      listItem.appendChild(link);
-      listItem.appendChild(curlCommand);
-      toolsList.appendChild(listItem);
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = toolsFolder + script;
+      a.textContent = script;
+      a.target = "_blank";
+      const code = document.createElement("code");
+      code.textContent = `curl -sSL ${toolsFolder}${script} | sudo bash`;
+      li.appendChild(a);
+      li.appendChild(code);
+      toolsList.appendChild(li);
     });
   </script>
 </body>
