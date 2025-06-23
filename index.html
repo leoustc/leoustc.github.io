@@ -370,6 +370,15 @@
       box-shadow: 0 0 0 2px #2563eb55;
     }
   </style>
+  <script>
+    // On reload, always scroll to top, even if there's a hash
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname + window.location.search);
+        window.scrollTo({top: 0, left: 0, behavior: "auto"});
+      }
+    });
+  </script>
 </head>
 <body>
   <header class="header">
