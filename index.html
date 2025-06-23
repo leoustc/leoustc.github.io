@@ -30,7 +30,7 @@
       color: var(--text);
       min-height: 100vh;
       scroll-behavior: smooth;
-      font-size: 18px; /* Base font size for better readability */
+      font-size: 18px;
     }
     body {
       display: flex;
@@ -65,7 +65,7 @@
     }
     .header > div {
       font-weight: 700;
-      font-size: 1.5rem; /* Larger site title */
+      font-size: 1.5rem;
       color: #fff;
       letter-spacing: -1px;
       background: none;
@@ -86,7 +86,7 @@
       color: #fff;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.08rem; /* Slightly larger nav links */
+      font-size: 1.08rem;
       padding: 7px 16px;
       border-radius: 8px;
       background: transparent;
@@ -226,7 +226,7 @@
       transform: scale(1.05) rotate(-2deg);
     }
     .profile h1 {
-      font-size: 2.5rem; /* Larger name */
+      font-size: 2.5rem;
       font-weight: 800;
       margin: 0;
       letter-spacing: -1.5px;
@@ -238,7 +238,7 @@
     .profile p {
       color: var(--muted);
       margin: 0;
-      font-size: 1.18rem; /* Slightly larger subtitle */
+      font-size: 1.18rem;
       font-weight: 500;
       letter-spacing: 0.01em;
     }
@@ -254,7 +254,7 @@
       color: #1e40af;
     }
     h2 {
-      font-size: 1.35rem; /* Section titles */
+      font-size: 1.35rem;
       font-weight: 800;
       margin-top: 0;
       margin-bottom: 1.1rem;
@@ -267,7 +267,7 @@
       background-clip: text;
     }
     h3 {
-      font-size: 1.08rem; /* Subsection titles */
+      font-size: 1.08rem;
       font-weight: 700;
       margin-bottom: 0.3rem;
       margin-top: 1.1rem;
@@ -285,7 +285,7 @@
     li {
       margin-bottom: 0.5em;
       line-height: 1.7;
-      font-size: 1.07rem; /* Body text and table */
+      font-size: 1.07rem;
     }
     table {
       width: 100%;
@@ -407,16 +407,55 @@
         max-height: 60vw;
       }
     }
-  </style>
-  <script>
-    // On reload, always scroll to top, even if there's a hash
-    window.addEventListener('DOMContentLoaded', function() {
-      if (window.location.hash) {
-        history.replaceState(null, null, window.location.pathname + window.location.search);
-        window.scrollTo({top: 0, left: 0, behavior: "auto"});
+    .book-covers {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: flex-end;
+      margin-top: 1.7rem;
+      margin-bottom: 0.5rem;
+      width: 100%;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .book-covers img {
+      flex: 1 1 0;
+      width: 100%;
+      max-width: 240px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px #2563eb22, 0 1.5px 8px #2563eb11;
+      background: #fff;
+      border: 1.5px solid #e0e7ef;
+      transition: transform 0.18s, box-shadow 0.18s;
+      min-width: 0;
+    }
+    .book-covers img:hover {
+      transform: scale(1.045) translateY(-4px);
+      box-shadow: 0 8px 32px #2563eb33, 0 2px 12px #2563eb22;
+      border-color: #b6c6e6;
+    }
+    @media (max-width: 900px) {
+      .book-covers img {
+        max-width: 140px;
+        height: 190px;
       }
-    });
-  </script>
+    }
+    @media (max-width: 700px) {
+      .book-covers {
+        gap: 0.7rem;
+        max-width: 100%;
+      }
+      .book-covers img {
+        max-width: 90px;
+        height: 130px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -476,6 +515,11 @@
           <li><strong>📗 Behind Algorithms</strong> — A technical and historical tour from CUDA cores to fabric-native GPU clusters.</li>
           <li><strong>📙 Between Algorithms</strong> — Reflects on how AI infrastructure reshapes society, cognition, and our understanding of life.</li>
         </ul>
+        <div class="book-covers">
+          <img src="beyondA.png" alt="Beyond Algorithms cover" />
+          <img src="behindA.png" alt="Behind Algorithms cover" />
+          <img src="betweenA.png" alt="Between Algorithms cover" />
+        </div>
       </section>
     </div>
 
