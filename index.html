@@ -12,7 +12,6 @@
       --primary: #2563eb;
       --primary-glow: 0 0 16px #2563eb55;
       --accent: #f1f5f9;
-      --card-bg-glass: rgba(255,255,255,0.82);
       --card-shadow: 0 8px 32px rgba(30,41,59,0.13), 0 1.5px 8px #2563eb22;
       --radius: 22px;
       --text: #1e293b;
@@ -50,7 +49,7 @@
       box-sizing: border-box;
       position: sticky;
       top: 0;
-      background: rgba(245,248,255,0.92);
+      background: var(--gradient-ai); /* unified color */
       z-index: 100;
       border-bottom: 1.5px solid var(--border);
       backdrop-filter: blur(16px) saturate(1.2);
@@ -66,31 +65,30 @@
     .header > div {
       font-weight: 700;
       font-size: 1.35rem;
-      color: var(--primary);
+      color: #fff;
       letter-spacing: -1px;
-      background: var(--gradient-ai);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background: none;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
+      background-clip: unset;
       user-select: none;
     }
     .nav-tabs {
       display: flex;
       gap: 10px;
-      background: rgba(255,255,255,0.7);
-      border-radius: 14px;
-      box-shadow: 0 2px 12px #2563eb0a;
+      background: none; /* no background layer */
+      box-shadow: none;
       padding: 4px 8px;
       align-items: center;
     }
     .nav-tabs a {
-      color: var(--primary);
+      color: #fff;
       text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
       padding: 7px 16px;
       border-radius: 8px;
-      background: none;
+      background: transparent; /* transparent button */
       transition: 
         background 0.15s,
         color 0.15s,
@@ -103,7 +101,7 @@
       gap: 6px;
     }
     .nav-tabs a:hover, .nav-tabs a.active {
-      background: var(--gradient-ai);
+      background: rgba(255,255,255,0.18); /* subtle glass hover */
       color: #fff;
       box-shadow: var(--primary-glow);
       text-decoration: none;
@@ -112,7 +110,6 @@
     .nav-tabs a:active {
       filter: brightness(0.95);
     }
-    /* Add a subtle divider between nav and content on mobile */
     .ai-accent {
       width: 100%;
       height: 3px;
@@ -135,7 +132,6 @@
       flex-direction: column;
       gap: 36px;
     }
-    /* Responsive design: leave edge on mobile, nav bar full width with margin */
     @media (max-width: 900px) {
       .header {
         max-width: 98vw;
@@ -173,41 +169,37 @@
       }
     }
     .card {
-      background: var(--card-bg-glass);
+      background: linear-gradient(120deg, rgba(255,255,255,0.32) 60%, rgba(230,240,255,0.18) 100%);
       border-radius: var(--radius);
-      box-shadow: var(--card-shadow);
+      box-shadow: 0 8px 32px 0 rgba(30,41,59,0.13), 0 1.5px 8px #2563eb22;
       padding: 2.5rem 2.2rem 2.2rem 2.2rem;
       margin-bottom: 0;
       transition: box-shadow 0.2s, transform 0.18s;
-      border: 1.5px solid var(--border);
-      backdrop-filter: blur(8px) saturate(1.1);
+      border: 1.5px solid rgba(224,231,239,0.35);
+      backdrop-filter: blur(22px) saturate(1.35);
+      -webkit-backdrop-filter: blur(22px) saturate(1.35);
       position: relative;
       overflow: hidden;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 0.8s forwards;
-    }
-    .card:nth-child(1) { animation-delay: 0.1s;}
-    .card:nth-child(2) { animation-delay: 0.2s;}
-    .card:nth-child(3) { animation-delay: 0.3s;}
-    .card:nth-child(4) { animation-delay: 0.4s;}
-    .card:nth-child(5) { animation-delay: 0.5s;}
-    .card:nth-child(6) { animation-delay: 0.6s;}
-    .card:nth-child(7) { animation-delay: 0.7s;}
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0);}
-    }
-    .card:hover {
-      box-shadow: 0 12px 40px #2563eb33, 0 2px 12px #2563eb22;
-      transform: translateY(-2px) scale(1.012);
+      /* Remove fade-in animation for instant display */
+      opacity: 1;
+      transform: none;
+      animation: none;
     }
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: linear-gradient(120deg, #2563eb11 0%, #7f9cf511 100%);
+      background: linear-gradient(120deg, #fff3 0%, #7f9cf511 100%);
       z-index: 0;
+      border-radius: inherit;
+      opacity: 0.55;
+    }
+    .card:hover {
+      box-shadow: 0 16px 48px #2563eb33, 0 4px 16px #2563eb22;
+      transform: translateY(-2px) scale(1.014);
+      border-color: #b6c6e6;
+      background: linear-gradient(120deg, rgba(255,255,255,0.44) 60%, rgba(230,240,255,0.28) 100%);
     }
     .profile {
       display: flex;
