@@ -49,7 +49,7 @@
       box-sizing: border-box;
       position: sticky;
       top: 0;
-      background: var(--gradient-ai); /* unified color */
+      background: var(--gradient-ai);
       z-index: 100;
       border-bottom: 1.5px solid var(--border);
       backdrop-filter: blur(16px) saturate(1.2);
@@ -76,7 +76,7 @@
     .nav-tabs {
       display: flex;
       gap: 10px;
-      background: none; /* no background layer */
+      background: none;
       box-shadow: none;
       padding: 4px 8px;
       align-items: center;
@@ -88,7 +88,7 @@
       font-size: 1rem;
       padding: 7px 16px;
       border-radius: 8px;
-      background: transparent; /* transparent button */
+      background: transparent;
       transition: 
         background 0.15s,
         color 0.15s,
@@ -101,7 +101,7 @@
       gap: 6px;
     }
     .nav-tabs a:hover, .nav-tabs a.active {
-      background: rgba(255,255,255,0.18); /* subtle glass hover */
+      background: rgba(255,255,255,0.18);
       color: #fff;
       box-shadow: var(--primary-glow);
       text-decoration: none;
@@ -180,7 +180,6 @@
       -webkit-backdrop-filter: blur(22px) saturate(1.35);
       position: relative;
       overflow: hidden;
-      /* Remove fade-in animation for instant display */
       opacity: 1;
       transform: none;
       animation: none;
@@ -316,7 +315,6 @@
     tr:nth-child(odd) {
       background: #fff;
     }
-    /* Responsive design */
     @media (max-width: 700px) {
       .header, .container {
         padding: 0 2vw;
@@ -340,11 +338,9 @@
         font-size: 0.93rem;
       }
     }
-    /* Subtle fade-in for sections */
     .card, .profile, .ai-accent {
       will-change: opacity, transform;
     }
-    /* Scrollbar styling for modern look */
     ::-webkit-scrollbar {
       width: 10px;
       background: #e0e7ef;
@@ -364,7 +360,6 @@
       text-decoration: underline;
       color: #1e40af;
     }
-    /* Soft shadow on focus for accessibility */
     a:focus, button:focus, input:focus {
       outline: none;
       box-shadow: 0 0 0 2px #2563eb55;
@@ -382,7 +377,9 @@
 </head>
 <body>
   <header class="header">
-    <div>Dr. Leo</div>
+    <div>
+      <a href="#about" style="color:inherit;text-decoration:none;outline:none;">Dr. Leo</a>
+    </div>
     <nav class="nav-tabs">
       <a href="#books">Books</a>
       <a href="#patents">Patents</a>
@@ -394,13 +391,12 @@
   <div class="ai-accent"></div>
   <div class="container">
     <div class="card profile" id="about">
-      <img src="leo-box.png" alt="Profile" />
+      <img src="leopic-box.png" alt="Profile" />
       <h1>Dr. Leo</h1>
       <p>Embracing the Future of AGI!</p>
-      ---
-        <p>
-          I'm Leo, an AI infrastructure architect focused on pushing the limits of modern hardware scalability—bridging GPUs, interconnects, and distributed systems to unlock their full potential. My work isn't just about performance tuning; it's about understanding the workarounds, bottlenecks, and structural shifts that define this technological era. Beyond engineering, I'm personally drawn to the deeper, human questions behind these changes—how they reshape not only computation, but our relationship to intelligence itself.
-        </p>
+      <p>
+        I'm Leo, an AI infrastructure architect focused on pushing the limits of modern hardware scalability—bridging GPUs, interconnects, and distributed systems to unlock their full potential. My work isn't just about performance tuning; it's about understanding the workarounds, bottlenecks, and structural shifts that define this technological era. Beyond engineering, I'm personally drawn to the deeper, human questions behind these changes—how they reshape not only computation, but our relationship to intelligence itself.
+      </p>
     </div>
 
     <div class="card" id="infra">
@@ -421,7 +417,7 @@
         <h3>4. AI-Native Application Stack</h3>
         <p>
           AI applications today aren’t just services—they're dynamic, emergent systems. LLM inference, multimodal fusion, token streaming—all rely on real-time orchestration of compute, memory, and network. To support this, infrastructure must become more reactive, adaptive, and tensor-native. In my view, this signals a new layer of computing logic—one rooted in matrix structures and flow fields, where software doesn't just run on hardware, it resonates with it.
-      </p>
+        </p>
       </section>
     </div>
 
@@ -501,6 +497,3 @@
         <p>Feel free to connect via <a href="mailto:info@leoustc.com">info@leoustc.com</a> or on <a href="https://github.com/leoustc" target="_blank">GitHub</a>.</p>
       </section>
     </div>
-  </div>
-</body>
-</html>
