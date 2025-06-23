@@ -3,160 +3,283 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Infrastructure Toolset</title>
+  <title>Dr. Leo — AI Infrastructure & Thought</title>
+  <meta name="description" content="Dr. Leo: Architecting the Future of Intelligence. AI infrastructure, books, patents, and more.">
+  <link rel="icon" href="leopic-box.png" />
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: #ffffff;
-      color: #24292f;
+    :root {
+      --primary: #2563eb;
+      --accent: #f1f5f9;
+      --card-bg: #fff;
+      --card-shadow: 0 4px 24px rgba(30,41,59,0.08);
+      --radius: 18px;
+      --text: #1e293b;
+      --muted: #64748b;
+    }
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(120deg, #f0f4ff 0%, #e0e7ff 100%);
+      color: var(--text);
+      min-height: 100vh;
     }
-    header {
-      background: #f6f8fa;
-      border-bottom: 1px solid #d0d7de;
-      padding: 1rem;
-      text-align: center;
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
     .container {
-      max-width: 880px;
-      margin: 40px auto;
-      padding: 0 20px;
+      width: 100%;
+      max-width: 740px;
+      margin: 48px 0 48px 0;
+      padding: 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
     }
-    h1, h2 {
-      font-weight: 600;
-      text-align: center;
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 2.2rem 2rem 2rem 2rem;
+      margin-bottom: 0;
+      transition: box-shadow 0.2s;
     }
-    .about-me, .layer {
-      margin-bottom: 30px;
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(30,41,59,0.13);
     }
-    a {
-      color: #0969da;
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .profile img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid #e0e7ef;
+      box-shadow: 0 2px 12px rgba(30,41,59,0.10);
+      margin-bottom: 0.5rem;
+    }
+    .profile h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -1px;
+    }
+    .profile p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    .profile a {
+      color: var(--primary);
+      font-weight: 500;
       text-decoration: none;
+      font-size: 1rem;
     }
-    a:hover {
+    .profile a:hover {
       text-decoration: underline;
     }
-    .tools li {
-      margin-bottom: 15px;
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.1rem;
+      letter-spacing: -0.5px;
+      color: var(--primary);
+      text-align: left;
     }
-    .tools li code {
-      background: #f6f8fa;
-      border: 1px solid #d0d7de;
-      border-radius: 4px;
-      display: block;
-      padding: 10px;
-      font-size: 14px;
-      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-      margin-top: 6px;
+    h3 {
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      margin-top: 1.1rem;
+      color: #334155;
     }
-    .github-logo {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
+    section {
+      margin-bottom: 0;
     }
-    .github-logo img {
-      width: 40px;
-      height: 40px;
+    ul {
+      padding-left: 1.2em;
+      margin: 0.5em 0 0 0;
+    }
+    li {
+      margin-bottom: 0.5em;
+      line-height: 1.6;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      margin-top: 0.7em;
+      background: #f8fafc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    table, th, td {
+      border: none;
+    }
+    th, td {
+      padding: 8px 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #e0e7ef;
+      color: #334155;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background: #f1f5f9;
+    }
+    tr:nth-child(odd) {
+      background: #fff;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 4vw;
+      }
+      .card {
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+      }
+      .profile img {
+        width: 64px;
+        height: 64px;
+      }
+      h2 {
+        font-size: 1.1rem;
+      }
+    }
+    .contact a {
+      color: var(--primary);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>AI Infrastructure Toolset</h1>
-  </header>
-
   <div class="container">
-    <div class="about-me">
-      <h2>Welcome</h2>
-      <p>
-        Hi, I'm <strong>Dr. Leo</strong>. I've been exploring and building infrastructure for large-scale AI systems for a while now — especially around GPU compute, fast networking, and scalable cloud-native setups.<br><br>
-        This page shares a few tools and notes that might help if you're building something similar. I hope they’re useful!<br>
-        Feel free to connect at <a href="https://leoustc.com" target="_blank">https://leoustc.com</a>
-      </p>
-     
+    <div class="card profile">
+      <img src="leopic-box.png" alt="Profile" />
+      <h1>Dr. Leo</h1>
+      <p>Embracing the Future of AGI!</p>
     </div>
 
-    <h2>Four Layers of AI Infrastructure</h2>
-
-    <div class="layer">
-      <h3>1. GPU & NVLink</h3>
-      <p>
-        GPUs are the backbone of AI computation, offering unparalleled parallel processing capabilities. Modern GPUs like NVIDIA A100 and H100 provide up to 1.6 TB/s memory bandwidth, enabling efficient data movement for large-scale AI models. NVLink further enhances multi-GPU setups by providing up to 600 GB/s interconnect speeds, reducing bottlenecks in distributed training. These technologies are critical for training LLMs (Large Language Models) and accelerating inference workloads.
-      </p>
-    </div>
-    <div class="layer">
-      <h3>2. RDMA Networking</h3>
-      <p>
-        RDMA (Remote Direct Memory Access) networking ensures low-latency, high-bandwidth communication between nodes in distributed AI workloads. With latencies as low as 1 microsecond and bandwidths exceeding 200 Gbps (e.g., InfiniBand or RoCE), RDMA is essential for synchronizing gradients and parameters across GPUs in multi-node setups. This minimizes communication overhead, enabling faster convergence during LLM training and improving scalability for large AI clusters.
-      </p>
-    </div>
-    <div class="layer">
-      <h3>3. Kubernetes</h3>
-      <p>
-        Kubernetes (K8s) provides a scalable and flexible platform for managing containerized AI workloads. It simplifies the orchestration of multi-node training jobs, inference pipelines, and resource allocation. Kubernetes ensures stability and fault tolerance by automatically rescheduling failed pods and maintaining service availability. For LLMs, Kubernetes enables seamless scaling and efficient resource utilization, making it a cornerstone of modern AI infrastructure.
-      </p>
-    </div>
-    <div class="layer">
-      <h3>4. AI-Native Applications</h3>
-      <p>
-        AI-native applications are designed to meet the unique demands of AI workloads. These include training pipelines, inference APIs, and data preprocessing tools. For LLMs, such applications streamline the deployment of models, optimize inferencing latency, and enable real-time use cases like chatbots and recommendation systems. Efficient AI-native applications are critical for bridging the gap between research and production, ensuring scalability and reliability in real-world scenarios.
-      </p>
+    <div class="card">
+      <section class="about-me">
+        <h2>About Me</h2>
+        <p>
+          I'm Leo, an AI infrastructure architect focused on pushing the limits of modern hardware scalability—bridging GPUs, interconnects, and distributed systems to unlock their full potential. My work isn't just about performance tuning; it's about understanding the workarounds, bottlenecks, and structural shifts that define this technological era. Beyond engineering, I'm personally drawn to the deeper, human questions behind these changes—how they reshape not only computation, but our relationship to intelligence itself.
+        </p>
+      </section>
     </div>
 
-    <div class="tools">
-      <h2>Tool Downloads</h2>
-      <p>The list below is fetched automatically from the <code>/tools/</code> folder in the repository. Run any script directly using:</p>
-      <ul id="tools-list"></ul>
+    <div class="card">
+      <section class="infra">
+        <h2>Four Layers of AI Infrastructure</h2>
+        <h3>1. GPU & NVLink</h3>
+        <p>
+          Modern GPUs provide immense compute power, but their true value emerges when linked via NVLink into coherent clusters. This high-bandwidth, low-latency interconnect transforms isolated devices into a unified compute fabric—critical for training large-scale models like LLMs. From my perspective, this trend marks a fundamental shift in computing: from linear pipelines to two-dimensional, matrix-like computation, where performance depends not just on raw power, but on the architecture of connections themselves.
+        </p>
+        <h3>2. RDMA & Networking</h3>        
+        <p>
+          Traditional networking protocols like TCP/IP were never designed for the demands of modern AI. RDMA fundamentally redefines this layer by enabling memory-to-memory transfers without CPU involvement—achieving microsecond latencies and full link saturation at 200 Gbps+. But more than a performance hack, RDMA represents a shift toward spatial communication models. In two-dimensional computing, data is no longer passed linearly, but flows across a fabric—emphasizing topology, synchronization, and bandwidth symmetry as first-class design principles.
+        </p>
+        <h3>3. Kubernetes & Scheduling</h3>
+        <p>
+          Kubernetes brought scale to the cloud, but AI workloads require more than generic orchestration—they demand hardware-aware, interconnect-sensitive scheduling. My work pushes K8s toward a topology-driven model, where GPU placement, NVLink awareness, and RDMA path optimization are tightly integrated. This aligns with the broader move from time-based to space-based computation: where resource geometry and inter-node relationships directly impact performance and scalability.
+        </p>
+        <h3>4. AI-Native Application Stack</h3>
+        <p>
+          AI applications today aren’t just services—they're dynamic, emergent systems. LLM inference, multimodal fusion, token streaming—all rely on real-time orchestration of compute, memory, and network. To support this, infrastructure must become more reactive, adaptive, and tensor-native. In my view, this signals a new layer of computing logic—one rooted in matrix structures and flow fields, where software doesn't just run on hardware, it resonates with it.
+      </p>
+      </section>
     </div>
 
+    <div class="card">
+      <section class="books">
+        <h2>Books (coming soon)</h2>
+        <ul>
+          <li><strong>📘 Beyond Algorithms</strong> — Explores the structural and philosophical foundations of intelligence through AI, networks, and quantum theory.</li>
+          <li><strong>📗 Behind Algorithms</strong> — A technical and historical tour from CUDA cores to fabric-native GPU clusters.</li>
+          <li><strong>📙 Between Algorithms</strong> — Reflects on how AI infrastructure reshapes society, cognition, and our understanding of life.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="card">
+      <section class="education">
+        <h2>Education</h2>
+        <ul>
+          <li>Ph.D., University of Wisconsin - Madison</li>
+          <li>B.S., University of Science and Technology of China</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="card">
+      <section class="affiliations">
+        <h2>Professional Affiliations</h2>
+        <ul>
+          <li>Voting member, Linux Foundation Edge and Akraino Project (2022, 2023)</li>
+          <li>Vice Director, Film Advanced Technology Committee, CSMPTE (2018)</li>
+          <li>Industry Professor, Jiangnan University (2017–2021)</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="card">
+      <section class="patents">
+        <h2>Selected Patents</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Patent ID</th>
+              <th>Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>21</td><td>US20120290696</td><td>Longest Prefix Matching of Variable-Sized Hierarchical Names by Treelets</td></tr>
+            <tr><td>20</td><td>CN20150605</td><td>File Transfer Based on Named Data Networking Caching Algorithm</td></tr>
+            <tr><td>19</td><td>CN119179440A</td><td>Distributed Storage Based on Centralized Metadata</td></tr>
+            <tr><td>18</td><td>CN119336686A</td><td>Expanding Base Address Register Space in PCIe Devices</td></tr>
+            <tr><td>17</td><td>CN114827151A</td><td>Heterogenous Clustered Devices via PCIe CXL and UCIe</td></tr>
+            <tr><td>16</td><td>CN114745325A</td><td>MAC in MAC Network Encoding via PCIe, CXL, UCIe</td></tr>
+            <tr><td>15</td><td>CN110891081A</td><td>Packet Routing and Broadcasting Method</td></tr>
+            <tr><td>14</td><td>CN20150605CN</td><td>Vehicular Networking with Content-Centric Networking</td></tr>
+            <tr><td>13</td><td>CN111027396A</td><td>Assisted Driving System and Cloud Server</td></tr>
+            <tr><td>12</td><td>CN110929087A</td><td>Audio Classification Method and Device</td></tr>
+            <tr><td>11</td><td>CN106708749A</td><td>Fast Searching Based on Fractional Algorithms</td></tr>
+            <tr><td>10</td><td>CN109688204A</td><td>File Download Using Named Data Networking</td></tr>
+            <tr><td>9</td><td>CN109448684A</td><td>Intelligent Music Composition</td></tr>
+            <tr><td>8</td><td>CN111209098A</td><td>Intelligent Rendering Scheduling System</td></tr>
+            <tr><td>7</td><td>CN110955515A</td><td>File Processing for Electronic Devices</td></tr>
+            <tr><td>6</td><td>CN111178151A</td><td>Micro-Expression Recognition Based on AI</td></tr>
+            <tr><td>5</td><td>CN106095996B</td><td>Text and Content Classification System</td></tr>
+            <tr><td>4</td><td>CN110944034A</td><td>Web-Based Resumable Transmission Protocol</td></tr>
+            <tr><td>3</td><td>CN111125045A</td><td>Lightweight ETL Processing Platform</td></tr>
+            <tr><td>2</td><td>2017211770803</td><td>Portable Accelerated Mobile Video Transmission</td></tr>
+            <tr><td>1</td><td>CN107819704A</td><td>Scalable Wireless Media App for Edge Computing</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <div class="card">
+      <section class="contact">
+        <h2>Contact</h2>
+        <p>Feel free to connect via <a href="mailto:info@leoustc.com">info@leoustc.com</a> or on <a href="https://github.com/leoustc" target="_blank">GitHub</a>.</p>
+      </section>
+    </div>
   </div>
-
-  <div class="github-logo">
-    <a href="https://github.com/leoustc" target="_blank">
-      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" />
-    </a>
-  </div>
-
-  <script>
-    const owner = "leoustc";
-    const repo = "leoustc.github.io";
-    const folderPath = "tools";
-    const apiURL = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
-    const rawBase = `https://${owner}.github.io/${folderPath}/`;
-
-    async function loadTools() {
-      try {
-        const res = await fetch(apiURL);
-        const data = await res.json();
-
-        const toolsList = document.getElementById("tools-list");
-
-        data.forEach(file => {
-          if (file.name.endsWith(".sh")) {
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            a.href = file.download_url;
-            a.textContent = file.name;
-            a.target = "_blank";
-
-            const code = document.createElement("code");
-            code.textContent = `curl -sSL ${rawBase}${file.name} | sudo bash`;
-
-            li.appendChild(a);
-            li.appendChild(code);
-            toolsList.appendChild(li);
-          }
-        });
-      } catch (err) {
-        console.error("Failed to load tools:", err);
-        const fallback = document.getElementById("tools-list");
-        fallback.innerHTML = "<li>Unable to fetch tool list. Please visit the <a href='https://github.com/leoustc/leoustc.github.io/tree/main/tools'>GitHub repo</a>.</li>";
-      }
-    }
-
-    loadTools();
-  </script>
-
 </body>
 </html>
